@@ -27,6 +27,7 @@ Controller(app.py):
   def subnetOperations(subnetValue)
   
   This method takes the subnet value and the method type("GET", "POST", "DELETE") 
+  
   "GET" : Returns details regarding a subnet. (VLAN ID, utilization percentage, subnet name, subnet range)
   "POST" : Add a subnet with a specific range and a VLAN ID.
   "DELETE" : Delete a subnet with a specific range and a VLAN ID, and all the assigned IPs to it.
@@ -35,6 +36,7 @@ Controller(app.py):
   def vlanOperations(subnetValue, vlanValue)
   
   This method takes the subnet value, vlanid and the method type("PATCH" , "DELETE") 
+  
   "PATCH" : Modify a VLAN ID assigned to an already existing subnet.
   "DELETE" : Delete a VLAN ID assigned to an already existing subnet.
   
@@ -42,6 +44,7 @@ Controller(app.py):
   def ipOperations(ipAddress)
   
   This method takes the Ip Address and the method type("PATCH" , "GET") 
+  
   "PATCH" : Reserve a free IP of a specific subnet with a given name.
   "GET" : Get details regarding an IP. (parent Subnet, is it free or used)
 
