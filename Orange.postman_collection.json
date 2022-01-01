@@ -1,0 +1,145 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Orange",
+		"_postman_id": "33004494-14c1-4390-25de-31443d56d9c1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Subnet",
+			"description": "",
+			"item": [
+				{
+					"name": "Add new subnet with given range and a name",
+					"request": {
+						"url": "http://127.0.0.1:5000/subnets/36",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"subnetName\":\"ali\",\n\t\"vlan\":90,\n\t\"min\":1,\n\t\"max\":256\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a subnet and all its ips",
+					"request": {
+						"url": "http://127.0.0.1:5000/subnets/24",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get subnet details",
+					"request": {
+						"url": "http://127.0.0.1:5000/subnets/24",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get details regarding a subnet. (VLAN ID, network IP, subnet mask, utilization percentage, subnet name)\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IP",
+			"description": "",
+			"item": [
+				{
+					"name": "Get IP details",
+					"request": {
+						"url": "http://127.0.0.1:5000/ips/255.255.255.3",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get IP Name, isAvailable, Subnet parent value, Subnet parent name"
+					},
+					"response": []
+				},
+				{
+					"name": "Reserve Ip with a given name",
+					"request": {
+						"url": {
+							"raw": "http://127.0.0.1:5000/ips/255.255.255.3?ipName=lol",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ips",
+								"255.255.255.3"
+							],
+							"query": [
+								{
+									"key": "ipName",
+									"value": "lol",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "reserve an existing ip with a given ip name"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vlan",
+			"description": "",
+			"item": [
+				{
+					"name": "Modify  VLAN ID ",
+					"request": {
+						"url": "http://127.0.0.1:5000/subnets/30/vlans/10",
+						"method": "PATCH",
+						"header": [],
+						"body": {},
+						"description": "Modify a VLAN ID assigned to an already existing subnet."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
