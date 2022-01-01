@@ -78,21 +78,3 @@ class IP(db.Model):
             "is_available": self.is_available,
             "subnet_id": self.subnet_id
         }
-
-#
-# class VLAN(db.Model):
-#     """
-#     VLAN Model
-#     """
-#     __tablename__ = "vlan"
-#
-#     vlan_id = db.Column(db.Integer, primary_key=True)
-#     vlan_value = db.Column(db.String, nullable=False)
-#     subnet_id = db.Column(db.Integer, db.ForeignKey('subnet.subnet_id'), nullable=False)
-#
-#     def __init__(self, vlan_value, subnet_id):
-#         self.vlan_value = vlan_value
-#         self.subnet_id = subnet_id
-#
-#     def __repr__(self):
-#         return f"<Item {self.vlan_id}>"
