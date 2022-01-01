@@ -27,8 +27,8 @@ Model
 
 Controller(app.py):
 
-1-@app.route("/subnets/<int:subnetValue>", methods=["GET", "POST", "DELETE"])
-  def subnetOperations(subnetValue)
+1- @app.route("/subnets/<int:subnetValue>", methods=["GET", "POST", "DELETE"])
+   def subnetOperations(subnetValue)
   
   This method takes the subnet value and the method type("GET", "POST", "DELETE") 
   
@@ -39,8 +39,8 @@ Controller(app.py):
   
   "DELETE" : Delete a subnet with a specific range and a VLAN ID, and all the assigned IPs to it.
 
-2-@app.route("/subnets/<int:subnetValue>/vlans/<int:vlanValue>", methods=["PATCH", "DELETE"])
-  def vlanOperations(subnetValue, vlanValue)
+2- @app.route("/subnets/<int:subnetValue>/vlans/<int:vlanValue>", methods=["PATCH", "DELETE"])
+   def vlanOperations(subnetValue, vlanValue)
   
   This method takes the subnet value, vlanid and the method type("PATCH" , "DELETE") 
   
@@ -49,8 +49,8 @@ Controller(app.py):
   
   "DELETE" : Delete a VLAN ID assigned to an already existing subnet.
   
-3-@app.route("/ips/<string:ipAddress>", methods=["GET", "PATCH"])
-  def ipOperations(ipAddress)
+3- @app.route("/ips/<string:ipAddress>", methods=["GET", "PATCH"])
+   def ipOperations(ipAddress)
   
   This method takes the Ip Address and the method type("PATCH" , "GET") 
   
